@@ -1,5 +1,3 @@
-import java.math.BigDecimal;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class IsPalindrome {
