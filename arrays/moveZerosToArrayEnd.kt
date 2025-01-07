@@ -1,6 +1,6 @@
 package arrays
 
-fun moveZeroToArrayEnd(nums: Array<Int>): ArrayList<Int> {
+fun moveZeroToArrayEnd(nums: Array<Int>): Array<Int> {
     val result = ArrayList<Int>(nums.size)
     var numberOfZeros = 0
     for (i in nums) {
@@ -11,11 +11,15 @@ fun moveZeroToArrayEnd(nums: Array<Int>): ArrayList<Int> {
         }
     }
 
-    for (i in 0..numberOfZeros) {
-        result.add(0)
+    for (i in 0..result.lastIndex){
+        nums[i]=result[i]
     }
 
-    return result
+    for (i in result.lastIndex..nums.lastIndex) {
+        nums[i] = 0
+    }
+
+    return nums
 }
 
 fun main() {
